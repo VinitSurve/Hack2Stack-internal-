@@ -1,0 +1,626 @@
+/* MyODRequests Styles */
+.my-od-requests-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Loading and Error States */
+.loading-container,
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+}
+
+.loading-container p,
+.error-container p {
+  margin-top: 16px;
+  color: #666;
+}
+
+.error-container i {
+  font-size: 48px;
+  color: #e74c3c;
+  margin-bottom: 16px;
+}
+
+.error-container button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Empty State */
+.empty-requests {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 40px;
+}
+
+.empty-icon {
+  font-size: 64px;
+  color: #bdc3c7;
+  margin-bottom: 16px;
+}
+
+.empty-requests h3 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.empty-requests p {
+  margin: 0 0 24px 0;
+  color: #666;
+}
+
+/* Requests List */
+.requests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.requests-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.create-request-btn {
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.create-request-btn:hover {
+  background-color: #2980b9;
+}
+
+.create-request-btn i {
+  margin-right: 8px;
+}
+
+.requests-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 20px;
+}
+
+.request-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.request-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.request-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.request-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #f39c12;
+  color: white;
+}
+
+.status-reviewing {
+  background-color: #3498db;
+  color: white;
+}
+
+.status-approved {
+  background-color: #27ae60;
+  color: white;
+}
+
+.status-rejected {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.request-card-content {
+  padding: 16px;
+}
+
+.request-info {
+  margin-bottom: 16px;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-row i {
+  margin-right: 10px;
+  color: #7f8c8d;
+}
+
+.request-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 16px;
+}
+
+.reason-preview {
+  flex: 1;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.4;
+}
+
+.view-details-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #3498db;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 10px;
+}
+
+.view-details-btn i {
+  margin-left: 4px;
+}
+
+/* Request Details */
+.request-details {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.request-details-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+  position: relative;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #3498db;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 20px;
+}
+
+.back-button i {
+  margin-right: 6px;
+}
+
+.request-details-header h2 {
+  margin: 0;
+  font-size: 20px;
+  flex: 1;
+}
+
+/* Workflow Progress Visualization */
+.workflow-progress {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 40px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.workflow-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  flex: 1;
+}
+
+.stage-marker {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+  border: 2px solid #bdc3c7;
+  font-weight: 500;
+}
+
+.workflow-stage.active .stage-marker {
+  background-color: #3498db;
+  color: white;
+  border-color: #3498db;
+}
+
+.workflow-stage.active.rejected .stage-marker {
+  background-color: #e74c3c;
+  border-color: #e74c3c;
+}
+
+.stage-label {
+  font-size: 13px;
+  color: #7f8c8d;
+  text-align: center;
+}
+
+.workflow-stage.active .stage-label {
+  color: #333;
+  font-weight: 500;
+}
+
+.stage-connector {
+  position: absolute;
+  top: 18px; /* Half of marker height */
+  height: 2px;
+  background-color: #bdc3c7;
+  width: 100%;
+  left: 50%;
+  z-index: 0;
+}
+
+.stage-connector.active {
+  background-color: #3498db;
+}
+
+.workflow-stage:last-child .stage-connector {
+  display: none;
+}
+
+/* Request Info Sections */
+.request-info-container {
+  padding: 20px;
+}
+
+.request-info-section,
+.request-document-section,
+.request-workflow-section {
+  margin-bottom: 30px;
+}
+
+.request-info-section h3,
+.request-document-section h3,
+.request-workflow-section h3 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.request-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  font-size: 13px;
+  color: #7f8c8d;
+  margin-bottom: 6px;
+}
+
+.info-value {
+  font-size: 15px;
+  color: #333;
+}
+
+.document-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  color: #495057;
+  text-decoration: none;
+  transition: background-color 0.2s;
+}
+
+.document-link:hover {
+  background-color: #e9ecef;
+}
+
+.document-link i {
+  margin-right: 8px;
+  color: #3498db;
+}
+
+/* Workflow History */
+.workflow-history-timeline {
+  padding-left: 12px;
+}
+
+.history-item {
+  display: flex;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.history-item:last-child {
+  margin-bottom: 0;
+}
+
+.history-item:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 12px;
+  bottom: -12px;
+  width: 2px;
+  background-color: #e9ecef;
+}
+
+.history-marker {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.history-marker.approved {
+  background-color: #27ae60;
+  color: white;
+}
+
+.history-marker.rejected {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.history-content {
+  flex: 1;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.history-stage {
+  font-weight: 500;
+  color: #333;
+}
+
+.history-date {
+  font-size: 13px;
+  color: #7f8c8d;
+}
+
+.history-by {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 6px;
+}
+
+.history-comments {
+  font-size: 14px;
+  color: #555;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  border-left: 3px solid #3498db;
+}
+
+.no-history {
+  color: #7f8c8d;
+  font-style: italic;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .requests-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .request-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .workflow-progress {
+    padding: 20px;
+  }
+  
+  .stage-label {
+    font-size: 12px;
+  }
+}
+
+/* Recent Requests in Dashboard */
+.recent-requests-list {
+  margin-top: 10px;
+}
+
+.recent-request-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.recent-request-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.recent-request-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f9fbff;
+}
+
+.recent-request-icon {
+  background-color: #f0f7ff;
+  color: #3b82f6;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.recent-request-content {
+  flex: 1;
+}
+
+.recent-request-title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 5px 0;
+  color: #1e293b;
+}
+
+.recent-request-details {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.recent-request-arrow {
+  color: #94a3b8;
+  margin-left: 10px;
+}
+
+/* Filter badges */
+.request-filters {
+  margin-bottom: 20px;
+}
+
+.filter-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+}
+
+.filter-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.filter-badge.approved {
+  background-color: rgba(39, 174, 96, 0.15);
+  color: #27ae60;
+}
+
+.filter-badge.pending {
+  background-color: rgba(243, 156, 18, 0.15);
+  color: #f39c12;
+}
+
+.filter-badge.rejected {
+  background-color: rgba(231, 76, 60, 0.15);
+  color: #e74c3c;
+}
+
+/* Refresh button */
+.refresh-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background-color: #f5f5f5;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.refresh-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.refresh-btn i {
+  margin-right: 8px;
+}

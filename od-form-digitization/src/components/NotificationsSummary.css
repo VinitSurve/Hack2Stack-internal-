@@ -1,0 +1,180 @@
+.notifications-summary {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.notifications-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eaeaea;
+  background-color: #f9f9f9;
+}
+
+.notifications-summary-header h3 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.view-all-btn {
+  background: transparent;
+  border: none;
+  color: #3498db;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.view-all-btn:hover {
+  text-decoration: underline;
+}
+
+.notifications-summary-content {
+  padding: 0;
+}
+
+.loading-state {
+  padding: 25px;
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  color: #888;
+}
+
+.empty-state i {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.notification-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-item {
+  display: flex;
+  padding: 12px 20px;
+  border-bottom: 1px solid #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  position: relative;
+}
+
+.notification-item:last-child {
+  border-bottom: none;
+}
+
+.notification-item:hover {
+  background-color: #f9f9f9;
+}
+
+.notification-item.unread {
+  background-color: #f0f8ff;
+}
+
+.notification-item.unread:hover {
+  background-color: #e6f3ff;
+}
+
+.notification-icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  color: #555;
+  flex-shrink: 0;
+}
+
+.notification-icon .success-icon {
+  color: #27ae60;
+}
+
+.notification-icon .danger-icon {
+  color: #e74c3c;
+}
+
+.notification-icon .primary-icon {
+  color: #3498db;
+}
+
+.notification-content {
+  flex: 1;
+}
+
+.notification-message {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.4;
+}
+
+.notification-comments {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #666;
+  background-color: #f5f5f5;
+  padding: 5px 8px;
+  border-radius: 4px;
+  border-left: 2px solid #ddd;
+}
+
+.notification-time {
+  margin: 0;
+  font-size: 12px;
+  color: #888;
+}
+
+.unread-indicator {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3498db;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .notification-message {
+    font-size: 13px;
+  }
+  
+  .notification-comments {
+    font-size: 12px;
+  }
+  
+  .notification-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .notification-item {
+    padding: 10px 15px;
+  }
+} 
